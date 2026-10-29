@@ -1,41 +1,31 @@
 # Study Tracker — SOC → Security Engineer
 
-Multi-goal study roadmap tracker (Progress Console). Works as a **PWA** on phone (Chrome → Add to Home screen) and offline after first load.
-
-## Live use
-
-1. Open the GitHub Pages / Netlify URL for this repo, **or**
-2. Open `index.html` via any HTTPS host
-3. Chrome on phone → **⋮ → Install app / Add to Home screen**
-
-## Files
-
-| File | Role |
-|------|------|
-| `index.html` | Full app (tracker UI + logic) |
-| `manifest.json` | PWA manifest |
-| `sw.js` | Service worker (offline cache) |
-| `icon-192.png` / `icon-512.png` | App icons |
+Offline-first, mobile-friendly multi-goal study roadmap tracker (PWA).
 
 ## Features
+- Multiple goals / tracks with switcher
+- Customizable themes, colors, backgrounds
+- Customize button for phases & tasks
+- 15-second undo toast after deleting a goal
+- Fully offline (localStorage + service worker)
+- Adaptive for phones (including Redmi / small screens)
+- Installable as PWA
 
-- Multi-goal tracking with switchable goals
-- Editable title / track name
-- Roadmap phases + custom tasks/phases
-- Study log & reminders
-- Achievements / badges
-- Theme customization (schemes + custom colors)
-- Undo delete goal (15s toast)
-- Mobile-responsive layout
+## Live demo
+https://unique-lollipop-f86b8b.netlify.app/
 
-## Local preview
+## How to use
+1. Open `index.html` in any modern browser, or
+2. Deploy the whole folder to Netlify / GitHub Pages / any static host
+3. On Android: open the site → browser menu → "Add to Home screen" / "Install app"
 
-```bash
-cd this-folder
-python3 -m http.server 8080
-# open http://localhost:8080
-```
+## Files
+- `index.html` — complete single-file app (HTML + CSS + JS)
+- `manifest.json` — PWA manifest
+- `sw.js` — service worker for offline caching
+- `icon-192.png` / `icon-512.png` — app icons (optional)
 
-## Netlify
+## Local development
+Just open `index.html`. No build step required.
 
-Drag this folder onto [Netlify Drop](https://app.netlify.com/drop), or connect this GitHub repo to Netlify for auto-deploy.
+Built for Redmi and other Android devices with proper viewport, safe-area, and touch support.

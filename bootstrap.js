@@ -1,6 +1,6 @@
 /* loader: fetch b64 parts, gunzip, eval */
 (async function(){
-  async function get(u){ const r=await fetch(u+'?v=2'); if(!r.ok) throw new Error(u); return r.text(); }
+  async function get(u){ const r=await fetch(u+'?v=3'); if(!r.ok) throw new Error(u); return r.text(); }
   async function inflate(b64){
     const bin=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
     const stream=new Blob([bin]).stream().pipeThrough(new DecompressionStream('gzip'));
@@ -12,7 +12,7 @@
     style.textContent=await inflate(cssB64);
     document.head.appendChild(style);
     let appB64='';
-    for (let i=0;i<2;i++) appB64 += await get('app.b64.'+i);
+    for (let i=0;i<5;i++) appB64 += await get('app.b64.'+i);
     (0,eval)(await inflate(appB64));
   } catch(e) {
     console.error(e);

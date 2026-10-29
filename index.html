@@ -11,12 +11,11 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
   <link rel="apple-touch-icon" href="icon-192.png">
-  <link rel="stylesheet" href="style.css">
   <title>SOC → Security Engineer Tracker</title>
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js').catch(function(){});
       });
     }
   </script>
@@ -25,6 +24,6 @@
 <div class="tracker-root" id="trRoot">
   <div class="tr-loading">INITIALIZING CONSOLE...</div>
 </div>
-<script src="app.js"></script>
+<script src="bootstrap.js"></script>
 </body>
 </html>

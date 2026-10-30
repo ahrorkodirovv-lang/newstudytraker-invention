@@ -1,5 +1,16 @@
-const CACHE = 'study-tracker-v2';
-const ASSETS = ['./', './index.html', './manifest.json'];
+const CACHE = 'study-tracker-v5';
+const ASSETS = [
+  './',
+  './index.html',
+  './bootstrap.js',
+  './manifest.json',
+  './app.b64.0',
+  './app.b64.1',
+  './app.b64.2',
+  './app.b64.3',
+  './app.b64.4',
+  './app.b64.5'
+];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting()));

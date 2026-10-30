@@ -2,31 +2,29 @@
 
 Offline-first multi-goal study roadmap tracker (PWA).
 
-## Status
+## Open the app
 
-This repo holds the PWA shell (`manifest.json`, `sw.js`).  
-**Upload the full `index.html`** (from the project zip / artifacts) via:
+**GitHub Pages** (after enabling):  
+https://ahrorkodirovv-lang.github.io/newstudytraker-invention/
 
-**GitHub → Add file → Upload files**
+**Raw HTML** (open `index.html` via any static host).
 
-Or clone and replace:
-
-```bash
-git clone https://github.com/ahrorkodirovv-lang/newstudytraker-invention.git
-# copy full index.html into the folder
-git add index.html && git commit -m "Add full Study Tracker app" && git push
-```
-
-## Features (full app)
-- Multiple goals / tracks
-- Themes & custom colors
+## Features
+- Multiple goals / tracks with switcher
+- Customizable themes & colors
 - Customize phases & tasks
-- 15s undo after delete goal
-- Mobile adaptive (Redmi)
-- Offline (service worker)
+- 15-second undo after deleting a goal
+- Mobile adaptive (Redmi / phones)
+- Works offline (service worker)
 
-## Netlify
-Connect this repo to Netlify, or drag the `pwa` folder to [Netlify Drop](https://app.netlify.com/drop).
+## How it loads
+`index.html` + `bootstrap.js` load gzipped chunks `app.b64.0` … `app.b64.5` and inject the full app.
 
-## Live demo
-https://unique-lollipop-f86b8b.netlify.app/
+## Deploy to Netlify
+Connect this repo, or drag the folder to [Netlify Drop](https://app.netlify.com/drop).
+
+## Local
+```bash
+python3 -m http.server 8080
+# open http://localhost:8080
+```

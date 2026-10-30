@@ -1,7 +1,7 @@
-/* Study Tracker full-page loader */
+/* Study Tracker full-page loader v6 */
 (async function(){
   async function get(u){
-    const r = await fetch(u + '?v=5');
+    const r = await fetch(u + '?v=6');
     if (!r.ok) throw new Error(u + ' ' + r.status);
     return r.text();
   }
@@ -20,6 +20,6 @@
     document.close();
   } catch (e) {
     console.error(e);
-    root.innerHTML = '<pre style="color:#F5EFE6;padding:24px;font-family:monospace;white-space:pre-wrap">Failed to load Study Tracker:\n' + String(e) + '</pre>';
+    root.innerHTML = '<pre style="color:#F5EFE6;padding:24px;font-family:monospace;white-space:pre-wrap">Failed to load Study Tracker:\n' + String(e) + '\n\nHard refresh (Ctrl+Shift+R) after redeploy.</pre>';
   }
 })();
